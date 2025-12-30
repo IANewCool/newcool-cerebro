@@ -1,6 +1,15 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
+// NPS Metrics from feedback module
+interface NPSMetrics {
+  npsScore: number
+  promoters: number
+  passives: number
+  detractors: number
+  totalResponses: number
+}
+
 interface UserIdentity {
   id: string
   title: string
@@ -30,6 +39,7 @@ interface CommunityMetrics {
   collectiveProgress: number
   neuralConnections: number
   userContribution: number
+  npsMetrics?: NPSMetrics
 }
 
 interface CerebroState {

@@ -8,12 +8,14 @@ import { CognitiveSkills } from '@/components/Dashboard/CognitiveSkills'
 import { EvolutionaryMissions } from '@/components/Dashboard/EvolutionaryMissions'
 import { CollectiveResonance } from '@/components/Dashboard/CollectiveResonance'
 import { PotentialPredictor } from '@/components/Dashboard/PotentialPredictor'
+import { T12Provider } from '@/components/T12Provider'
 import { useCerebroStore } from '@/lib/stores/useCerebroStore'
 
 export default function CerebroEvolutivoDashboard() {
   const { userIdentity, learningProfile } = useCerebroStore()
 
   return (
+    <T12Provider>
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900/20 to-blue-900/20">
       {/* Particles Background Effect */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
@@ -149,5 +151,6 @@ export default function CerebroEvolutivoDashboard() {
         </footer>
       </div>
     </div>
+    </T12Provider>
   )
 }
